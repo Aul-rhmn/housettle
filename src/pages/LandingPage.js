@@ -5,6 +5,8 @@ import Header from "parts/Header";
 import GuestFavorite from "parts/GuestFavorite";
 import landingPage from "json/landingPage.json";
 import Categories from 'parts/Categories'
+import Testimony from 'parts/Testimony'
+import Footer from 'parts/Footer'
 
 export default class LandingPage extends Component {
   constructor(props) {
@@ -24,6 +26,8 @@ export default class LandingPage extends Component {
           data={landingPage.guestFavorite}
         />
         <Categories data={landingPage.categories} />
+        <Testimony data={landingPage.testimonial}/>
+        <Footer />
       </>
     );
   }

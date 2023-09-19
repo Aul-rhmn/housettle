@@ -3,7 +3,12 @@ import React from "react";
 
 export default function GuestFavorite(props) {
   return (
-    <section className="container" ref={props.refGuestFavorite}>
+    <section 
+    className="container" 
+    ref={props.refGuestFavorite}
+    >
+    
+
       <h4 className="mb-3 font-weight-bold">Guest Favorite</h4>
       <div className="container-grid">
         {props.data.map((item, index) => {
@@ -27,7 +32,7 @@ export default function GuestFavorite(props) {
                 <div className="meta-wrapper">
                   <Button
                     type="link"
-                    className="streched-link d-block 
+                    className="stretched-link d-block 
                     text-white"
                     href={`/properties/${item._id}`}
                   >
@@ -39,9 +44,8 @@ export default function GuestFavorite(props) {
                 </div>
               </div>
             </div>
-          );
+          )
         })}
-        ;
       </div>
     </section>
   );

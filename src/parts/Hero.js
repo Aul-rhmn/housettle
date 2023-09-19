@@ -86,8 +86,8 @@ export default function Hero(props) {
           </div>
         </div>
 
-        <div className="col-6 pl-5">
-          <div className="pl-5" style={{ width: 590, height: 400 }}>
+        <div className="col-6">
+          <div className="pl-3" style={{ width: 590, height: 400 }}>
             <img
               src={ImageHero}
               alt="Room with couches"
