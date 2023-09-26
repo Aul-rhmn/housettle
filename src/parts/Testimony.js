@@ -2,9 +2,11 @@ import React from "react";
 import Star from "elements/Star";
 import TestimonyAccent from "assets/images/frame-testimonial.jpg";
 import Button from "elements/Button";
+import { Fade } from "react-awesome-reveal";
 
 export default function Testimony({ data }) {
   return (
+    <Fade direction="right">
     <section className="container">
       <div className="row align-items-center">
         <div className="col-auto" style={{ marginRight: 70 }}>
@@ -30,7 +32,7 @@ export default function Testimony({ data }) {
             {data.content}
           </h5>
           <span className="text-gray-500">
-            {data.familyName}, {data.famlyOccupation}
+            {data.familyName}, {data.familyOccupation}
           </span>
           <div>
             <Button
@@ -47,5 +49,6 @@ export default function Testimony({ data }) {
         </div>
       </div>
     </section>
+    </Fade>
   );
 }
