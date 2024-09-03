@@ -11,6 +11,7 @@
     "axios": "^1.7.2",
     "buffer": "^6.0.3",
     "date-fns": "^2.30.0",
+    "html-react-parser": "^5.1.15",
     "react": "^18.2.0",
     "react-awesome-reveal": "^4.2.5",
     "react-date-range": "^1.4.0",
