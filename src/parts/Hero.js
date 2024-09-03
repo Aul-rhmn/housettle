@@ -2,16 +2,14 @@ import React from "react";
 import { Fade } from "react-awesome-reveal";
 import ImageHero from "assets/images/img-hero.jpg";
 import ImageHeroF from "assets/images/img-hero-frame.jpg";
-import IconCities from "assets/images/icons/ic_cities.svg";
-import IconTraveler from "assets/images/icons/ic_traveler.svg";
-import IconTreasure from "assets/images/icons/ic_treasure.svg";
+
 import Button from "elements/Button";
 import formatNumber from "utlts/formatNumber";
 
 export default function Hero(props) {
-  function showGuestFavorite() {
+  function showMostPicked() {
     window.scrollTo({
-      top: props.refGuestFavorite.current.offsetTop - 30,
+      top: props.refMostPicked.current.offsetTop - 30,
       behavior: "smooth",
     });
   }
@@ -19,14 +17,14 @@ export default function Hero(props) {
   return (
     <Fade direction="up">
     <section className="container pt-4">
-      <div className="row align-items-center">
-        <div className="col-auto pr-5" style={{ width: 530 }}>
+      <div className="hero-content">
+        <div className="col-lg-6 hero-text">
           <h1 className="font-weight-bold line-height-1 mb-3">
             Rediscover Serenity, <br />
             Unveil Dream Vacation
           </h1>
           <p
-            className="mb-4 font-weight-normal text-gray-600 w-75"
+            className="mb-4 font-weight-normal text-gray-600"
             style={{ lineHeight: "170%" }}
           >
             Embark on Unforgettable Journeys, by Capturing Treasured Memories to
@@ -36,20 +34,18 @@ export default function Hero(props) {
             className="btn px-5"
             hasShadow
             isPrimary
-            onClick={showGuestFavorite}
+            onClick={showMostPicked}
           >
             Show Me Now
           </Button>
-
-          <div className="row" style={{ marginTop: 80 }}>
-            <div className="col-auto" style={{ marginRight: 35 }}>
+          <div className="data-travelers mt-4 justify-content-lg-start">
+            <div className="icon mr-4" >
               <img
                 width="36"
                 height="36"
-                src={IconTraveler}
+                src="/images/ic_traveler.svg"
                 alt={`${props.data.travelers} Travelers`}
               />
-
               <h6 className="mt-3">
                 {formatNumber(props.data.travelers)}{" "}
                 <span className="text-gray-600 font-weight-light">
@@ -57,11 +53,11 @@ export default function Hero(props) {
                 </span>
               </h6>
             </div>
-            <div className="col-auto" style={{ marginRight: 35 }}>
+            <div className="icon" style={{ marginRight: 15 }}>
               <img
                 width="36"
                 height="36"
-                src={IconTreasure}
+                src="/images/ic_treasure.svg"
                 alt={`${props.data.treasures} Treasures`}
               />
 
@@ -72,12 +68,12 @@ export default function Hero(props) {
                 </span>
               </h6>
             </div>
-            <div className="col-auto">
+            <div className="icon">
               <img
                 width="36"
                 height="36"
-                src={IconCities}
-                alt={`${props.data.Cities} Cities`}
+                src="/images/ic_cities.svg"
+                alt={`${props.data.cities} Cities`}
               />
               <h6 className="mt-3">
                 {formatNumber(props.data.cities)}{" "}
@@ -86,20 +82,18 @@ export default function Hero(props) {
             </div>
           </div>
         </div>
-
-        <div className="col-6">
-          <div className="pl-3" style={{ width: 590, height: 400 }}>
+        <div className="col-lg-6 image-hero-wrapper">
+          <div className="image-container">
             <img
               src={ImageHero}
               alt="Room with couches"
-              className="img-fluid position-absolute"
-              style={{ margin: "-20px 0 0 -30px", zIndex: 1 }}
+              className="hero-image img-fluid"
+
             />
             <img
               src={ImageHeroF}
               alt="Room with couches Frame"
-              className="img-fluid position-absolute"
-              style={{ margin: "50px -15px -15px 0" }}
+              className="hero-image-frame img-fluid"
             />
           </div>
         </div>

@@ -1,34 +1,31 @@
-import React, { Component } from "react";
+import React, { useEffect, useRef } from "react";
 
 import Hero from "parts/Hero";
 import Header from "parts/Header";
-import GuestFavorite from "parts/GuestFavorite";
+import MostPicked from "parts/MostPicked";
+import Categories from "parts/Categories";
+import Testimony from "parts/Testimony";
+import Footer from "parts/Footer";
 import landingPage from "json/landingPage.json";
-import Categories from 'parts/Categories'
-import Testimony from 'parts/Testimony'
-import Footer from 'parts/Footer'
 
-export default class LandingPage extends Component {
-  constructor(props) {
-    super(props);
-    this.refGuestFavorite = React.createRef();
-  }
-  render() {
-    return (
-      <>
-        <Header {...this.props} />
-        <Hero
-          refGuestFavorite={this.refGuestFavorite}
-          data={landingPage.hero}
-        />
-        <GuestFavorite
-          refGuestFavorite={this.refGuestFavorite}
-          data={landingPage.guestFavorite}
-        />
-        <Categories data={landingPage.categories} />
-        <Testimony data={landingPage.testimonial}/>
-        <Footer />
-      </>
-    );
-  }
-}
+const LandingPage = (props) => {
+  const refMostPicked = useRef();
+
+  useEffect(() => {
+    window.title = "Staycation | Home";
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <>
+      <Header {...props} />
+      <Hero refMostPicked={refMostPicked} data={landingPage.hero} />
+      <MostPicked refMostPicked={refMostPicked} data={landingPage.mostPicked} />
+      <Categories data={landingPage.categories} />
+      <Testimony data={landingPage.testimonial} />
+      <Footer />
+    </>
+  );
+};
+
+export default LandingPage;
